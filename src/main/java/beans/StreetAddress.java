@@ -12,13 +12,11 @@ public class StreetAddress implements Serializable {
     private String state;
     private String zip;
 
-    public StreetAddress() { }
+    public StreetAddress() {
+    }
 
-    public StreetAddress(String addressLineOne,
-            String addressLineTwo,
-            String city,
-            String state,
-            String zip) {
+    public StreetAddress(String addressLineOne, String addressLineTwo,
+            String city, String state, String zip) {
         this.addressLineOne = addressLineOne;
         this.addressLineTwo = addressLineTwo;
         this.city = city;
@@ -26,9 +24,7 @@ public class StreetAddress implements Serializable {
         this.zip = zip;
     }
 
-    public StreetAddress(String addressLineOne,
-            String city,
-            String state,
+    public StreetAddress(String addressLineOne, String city, String state,
             String zip) {
         this(addressLineOne, "", city, state, zip);
     }
