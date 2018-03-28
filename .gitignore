@@ -1,9 +1,11 @@
 bin/*
 
-*.classpath
+.classpath
 
-*.project
+.project
 
 *.class
 
-*.settings
+.settings/*
+
+.gradle/*
