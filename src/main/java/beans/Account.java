@@ -6,6 +6,7 @@ public class Account implements Serializable {
 
     public static final long serialVersionUID = 1L;
 
+    private final long id;
     private String name;
     private String url;
     private String owner;
@@ -14,10 +15,12 @@ public class Account implements Serializable {
     private String data;
 
     public Account() {
+        id = 0;
     }
 
-    public Account(String name, String url, String owner, StreetAddress address,
+    public Account(long id, String name, String url, String owner, StreetAddress address,
             String phone, String data) {
+        this.id = id;
         this.name = name;
         this.url = url;
         this.owner = owner;
@@ -26,6 +29,10 @@ public class Account implements Serializable {
         this.data = data;
     }
 
+    public long getId() {
+        return id;
+    }
+    
     public String getName() {
         return name;
     }

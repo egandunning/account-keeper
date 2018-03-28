@@ -6,6 +6,7 @@ public class StreetAddress implements Serializable {
 
     public static final long serialVersionUID = 1L;
 
+    private final long id;
     private String addressLineOne;
     private String addressLineTwo;
     private String city;
@@ -13,10 +14,12 @@ public class StreetAddress implements Serializable {
     private String zip;
 
     public StreetAddress() {
+        id = 0;
     }
 
-    public StreetAddress(String addressLineOne, String addressLineTwo,
+    public StreetAddress(long id, String addressLineOne, String addressLineTwo,
             String city, String state, String zip) {
+        this.id = id;
         this.addressLineOne = addressLineOne;
         this.addressLineTwo = addressLineTwo;
         this.city = city;
@@ -24,11 +27,15 @@ public class StreetAddress implements Serializable {
         this.zip = zip;
     }
 
-    public StreetAddress(String addressLineOne, String city, String state,
+    public StreetAddress(long id, String addressLineOne, String city, String state,
             String zip) {
-        this(addressLineOne, "", city, state, zip);
+        this(id, addressLineOne, "", city, state, zip);
     }
 
+    public long getId() {
+        return id;
+    }
+    
     public String getAddressLineOne() {
         return this.addressLineOne;
     }
@@ -67,5 +74,12 @@ public class StreetAddress implements Serializable {
 
     public void setZip(String zip) {
         this.zip = zip;
+    }
+
+    @Override
+    public String toString() {
+        return "StreetAddress [addressLineOne=" + addressLineOne
+                + ", addressLineTwo=" + addressLineTwo + ", city=" + city
+                + ", state=" + state + ", zip=" + zip + "]";
     }
 }
