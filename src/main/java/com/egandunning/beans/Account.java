@@ -1,4 +1,4 @@
-package beans;
+package com.egandunning.beans;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ public class Account implements Serializable {
 
     public static final long serialVersionUID = 1L;
 
-    private final long id;
+    private long id;
     private String name;
     private String url;
     private String owner;
@@ -31,6 +31,10 @@ public class Account implements Serializable {
 
     public long getId() {
         return id;
+    }
+    
+    public void setId(long id) {
+        this.id = id;
     }
     
     public String getName() {

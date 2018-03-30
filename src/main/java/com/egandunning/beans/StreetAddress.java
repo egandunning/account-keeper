@@ -1,4 +1,4 @@
-package beans;
+package com.egandunning.beans;
 
 import java.io.Serializable;
 
