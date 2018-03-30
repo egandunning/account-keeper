@@ -35,8 +35,8 @@ public class AccountController {
         return null;
     }
     
-    @RequestMapping(value="/{id}", method=RequestMethod.PATCH)
-    public Account patchAccount(@PathVariable(value="id") String id, @RequestParam(value="account") Account account) {
+    @RequestMapping(value="/{id}", method=RequestMethod.PUT)
+    public Account patchAccount(@PathVariable(value="id") String id, @RequestBody Account account) {
         return account;
     }
     
