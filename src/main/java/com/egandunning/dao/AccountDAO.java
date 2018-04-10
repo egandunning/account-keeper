@@ -13,4 +13,6 @@ public interface AccountDAO {
     public void createAccount(Account account) throws Exception;
     
     public void updateAccount(long id, Account account) throws Exception;
+    
+    public void deleteAccount(long id) throws Exception;
 }
