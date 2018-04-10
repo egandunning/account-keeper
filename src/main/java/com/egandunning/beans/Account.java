@@ -2,6 +2,13 @@ package com.egandunning.beans;
 
 import java.io.Serializable;
 
+import com.egandunning.models.DollarAmount;
+
+/**
+ * Represents an online account. For record-keeping purposes.
+ * @author dunning
+ *
+ */
 public class Account implements Serializable {
 
     public static final long serialVersionUID = 1L;
@@ -13,13 +20,15 @@ public class Account implements Serializable {
     private StreetAddress address;
     private String phone;
     private String data;
+    private DollarAmount paymentAmount;
+    private int paymentsPerYear;
 
     public Account() {
         id = 0;
     }
 
     public Account(long id, String name, String url, String owner, StreetAddress address,
-            String phone, String data) {
+            String phone, String data, DollarAmount paymentAmount, int paymentsPerYear) {
         this.id = id;
         this.name = name;
         this.url = url;
@@ -27,6 +36,23 @@ public class Account implements Serializable {
         this.address = address;
         this.phone = phone;
         this.data = data;
+        this.paymentAmount = paymentAmount;
+        this.paymentsPerYear = paymentsPerYear;
+    }
+    
+    /**
+     * Create an account with no payment amount.
+     * @param id
+     * @param name
+     * @param url
+     * @param owner
+     * @param address
+     * @param phone
+     * @param data
+     */
+    public Account(long id, String name, String url, String owner, StreetAddress address,
+            String phone, String data) {
+        this(id, name, url, owner, address, phone, data, new DollarAmount(), 0);
     }
 
     public long getId() {
@@ -85,10 +111,27 @@ public class Account implements Serializable {
         this.data = data;
     }
 
+    public DollarAmount getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(DollarAmount paymentAmount) {
+        this.paymentAmount = paymentAmount;
+    }
+
+    public int getPaymentsPerYear() {
+        return paymentsPerYear;
+    }
+
+    public void setPaymentsPerYear(int paymentsPerYear) {
+        this.paymentsPerYear = paymentsPerYear;
+    }
+
     @Override
     public String toString() {
-        return "Account [name=" + name + ", url=" + url + ", owner=" + owner
-                + ", address=" + address + ", phone=" + phone + ", data=" + data
-                + "]";
+        return "Account [id=" + id + ", name=" + name + ", url=" + url
+                + ", owner=" + owner + ", address=" + address + ", phone="
+                + phone + ", data=" + data + ", paymentAmount=" + paymentAmount
+                + ", paymentsPerYear=" + paymentsPerYear + "]";
     }
 }
