@@ -24,6 +24,10 @@ public class DollarAmount {
         this.cents = other.cents;
     }
     
+    public DollarAmount(int dollars) {
+        this.dollars = dollars;
+    }
+    
     public DollarAmount(int dollars, byte cents) {
         if(cents > 99) {
             throw new InvalidCentAmountException(cents);
