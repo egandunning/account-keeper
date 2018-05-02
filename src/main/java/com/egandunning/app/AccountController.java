@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.egandunning.beans.Account;
-import com.egandunning.beans.StreetAddress;
 
 @RestController
 @RequestMapping("/account")
@@ -15,12 +14,8 @@ public class AccountController {
 
     @RequestMapping(method=RequestMethod.GET)
     public Account[] getAccounts() {
-        Account[] accounts = new Account[1];
-        accounts[0] = new Account(123, "dummy account", "egandunning.com", "me",
-                new StreetAddress(123, "123 address rd", "Minnapolis", "MN",
-                        "55121"),
-                "132 123 1234", "");
-        return accounts;
+        
+        return null;
     }
 
     @RequestMapping(method=RequestMethod.POST)
